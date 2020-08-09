@@ -1,0 +1,67 @@
+# задание 1
+
+def div(*args):
+    try:
+        arg1 = int(input("Введите первое число"))
+        arg2 = int(input("Введите второе число"))
+        res = arg1 / arg2
+    except ZeroDivisionError:
+        return "Вы не можете поделить на ноль!"
+    return res
+
+
+print(f'Ваш результат {div()}')
+
+# задание 2
+
+person = input('Ваше ФИО')
+year = input('Год рождения')
+city = input('Ваш город')
+email = input('Ваш email')
+number = input('Ваш телефон')
+
+
+def my_function(person, year, city, email, number):
+    return ' '.join([person, year, city, email, number])
+
+
+print(my_function(person, year, city, email, number))
+
+
+# задание 3
+
+def function(arg1, arg2, arg3):
+    if arg1 >= arg3:
+        if arg2 >= arg3:
+            return arg1 + arg2
+        elif arg2 < arg1 < arg3:
+            return arg1 + arg3
+        else:
+            return arg2 + arg3
+    elif arg2 < arg1 < arg3:
+        return arg1 + arg3
+    else:
+        return arg2 + arg3
+
+print(f'Результат - {function(int(input("Введите первое число")), int(input("Введите второе число")), int(input("Введите третье число")))}')
+
+# задание 4
+
+def my_func(x: object, y: object) -> object:
+    if y == 0:
+        return 1
+    if y % 2 == 0:
+        my_func(x * x, y / 2)
+    return x * my_func(x, y - 1)
+
+
+x = float(input("Введите 1-ое число"))
+y = int(input('Введите 2-ое число'))
+print(my_func(x, y))
+
+# задание 6
+def int_func (*args):
+    text = input("Введите слова ")
+    print(text.title())
+    return
+int_func()
