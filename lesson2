@@ -1,5 +1,4 @@
 # задание 1
-from typing import Dict
 
 my_list = ["строка", 123, 45.3, None, -3]
 def my_type(el):
