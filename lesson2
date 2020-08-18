@@ -1,0 +1,89 @@
+# задание 1
+from typing import Dict
+
+my_list = ["строка", 123, 45.3, None, -3]
+def my_type(el):
+    for el in range(len(my_list)):
+        print(type(my_list[el]))
+    return
+my_type(my_list)
+
+# задание 2
+
+el_count = int(input("Введите число элементов в списке"))
+list_01 = []
+i = 0
+el = 0
+while i < el_count:
+    list_01.append(input("Введите новое значение списка "))
+    i += 1
+for elem in range(int(len(list_01)/2)):
+        list_01[el], list_01[el + 1] = list_01[el + 1], list_01[el]
+        el += 2
+print(list_01)
+
+# задание 3
+
+seasons_mean = {1: 'зима', 2: 'весна', 3: 'лето', 4: 'осень'}
+month = int(input("Введите номер месяца "))
+if month ==1 or month == 12 or month == 2:
+        print(seasons_mean.get(1))
+elif month == 3 or month == 4 or month ==5:
+    print(seasons_mean.get(2))
+elif month == 6 or month == 7 or month == 8:
+    print(seasons_mean.get(3))
+elif month == 9 or month == 10 or month == 11:
+    print(seasons_mean.get(4))
+else:
+    print("Кажется, Вы ошиблись! Попробуйте еще раз")
+
+# задание 4
+
+stroka = input("Введите несколько слов")
+slova = []
+num = 1
+for el in range(stroka.count(' ') + 1):
+    slova = stroka.split()
+    if len(str(slova)) <= 10:
+        print(f'{num} {slova [el]}')
+        num += 1
+    else:
+        print(f'{num} {slova [el] [0:10]}')
+        num += 1
+
+# задание 5
+
+this_list = [12, 5, 9, 4, 1]
+print(f'Мой рейтинг - {this_list}')
+digit = int(input("Введите число (000 - выход) "))
+while digit != 000:
+    for el in range(len(this_list)):
+        if this_list[el] == digit:
+            this_list.insert(el + 1, digit)
+            break
+        elif this_list[0] < digit:
+            this_list.insert(0, digit)
+        elif this_list[-1] > digit:
+            this_list.append(digit)
+        elif this_list[el] > digit and this_list[el + 1] < digit:
+            this_list.insert(el + 1, digit)
+    print(f'Список сейчас - {this_list}')
+    digit = int(input("Введите число "))
+
+# задание 6
+
+catalog = int(input("Введите количество товара "))
+n = 1
+dictionary = []
+listing = []
+analysis = {}
+while n <= catalog:
+    dictionary = dict({'Наименование': input("Введите наименование товара "), 'Цена продукта': input("Введите цену продукта "),
+                    'Количество товара': input('Введите количество товара '), 'Ед': input("Введите единицу измерения ")})
+    listing .append((n, dictionary))
+    n += 1
+    analysis = dict(
+        {'Наименование': dictionary.get('Наименование'), 'Цена продукта': dictionary.get('Цена продукта'), 'Количество товара': dictionary.get('Количество товара'),
+         'Ед': dictionary.get('Ед')})
+print(listing)
+print(analysis)
