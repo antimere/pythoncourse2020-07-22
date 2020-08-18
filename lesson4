@@ -1,0 +1,34 @@
+# задание 1
+from sys import argv
+time, salary, bonus = argv
+try:
+    time = int(time)
+    salary = int(salary)
+    bonus = int(bonus)
+    res = time * salary + bonus
+    print(f'Заработная плата данного сотрудника - {res}')
+except ValueError:
+    print('Ошибка!')
+
+# задание 2
+listing = [5, 8, 19, 29, 45, 23, 1, 200]
+new_listing = [el for num, el in enumerate(listing) if listing[num - 1] < listing[num]]
+print(f'Исходный список {listing}')
+print(f'Новый список {new_listing}')
+
+# задание 3
+print(f'Числа от 20 до 240 кратные 20 или 21 это - {[el for el in range(20, 241) if el % 20 == 0 or el % 21 == 0]}')
+
+# задание 6
+
+#а)
+
+from itertools import count
+for el in count(int(input('Введите первое число '))):
+    print(el)
+
+#б)
+from itertools import cycle
+listing = [777, 'строка', None, False, True]
+for el in cycle(listing):
+    print(el)
